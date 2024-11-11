@@ -2,6 +2,8 @@ import { ActionReducerMapBuilder, createAsyncThunk, createSlice } from "@reduxjs
 import { DataStatus, stateState } from "../../types/reduxTypes";
 import { IResults, IStatesDetails, StateModel } from "../../types/getDTOs";
 
+const baseUrl = "http://192.168.20.64:5959/"
+
 const initialState: stateState = {
     error: null,
     status: DataStatus.IDLE,
@@ -13,13 +15,13 @@ export const fetchStates = createAsyncThunk(
     "states/getList",
     async (_, thunkApi) => {
       try {
-        const resDetails = await fetch("http://localhost:5959/api/states");
+        const resDetails = await fetch(baseUrl + "api/states");
         if (resDetails.status != 200) {
           thunkApi.rejectWithValue("Can't get the list, please try again");
         }
         const dataDetails = await resDetails.json() as IStatesDetails[];
 
-        const resResults = await fetch("http://localhost:5959/api");
+        const resResults = await fetch(baseUrl + "api");
         if (resResults.status != 200) {
             thunkApi.rejectWithValue("Can't get the list, please try again");
         }

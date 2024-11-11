@@ -53,3 +53,9 @@ export const STATES = [
 ] as const;
 
 export type EStates = (typeof STATES)[number];
+
+export type CreateObjectFromKeys<T extends readonly string[]> = {
+  [K in T[number]]: {fill: string, stroke?: string, onClick?: unknown; };
+};
+
+export type CustomStates = Partial<CreateObjectFromKeys<typeof STATES>>

@@ -25,3 +25,7 @@ export interface IStatesDetails {
 export interface StateModel extends IStatesDetails {
     results: IStateResult
 }
+
+export interface ColorsDict {
+    [key: string]: string
+}

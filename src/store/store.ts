@@ -2,10 +2,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import stateSlice from "./slices/stateSlice";
+import colorsSlice from "./slices/colorsSlice";
 
 const store = configureStore({
   reducer: {
-    states: stateSlice.reducer
+    states: stateSlice.reducer,
+    colors: colorsSlice.reducer
   },
 });
 

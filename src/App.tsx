@@ -1,18 +1,12 @@
-import { useEffect } from 'react'
+
 import './App.css'
-import { useAppDispatch, useAppSelector } from './store/store'
-import { fetchStates } from './store/slices/stateSlice'
+import MapUSA from './components/MapUSA'
 
 function App() {
-  // const states = useAppSelector(s => s.states.state)
-  // const dispatch = useAppDispatch()
-  // useEffect(()=> {
-  //   dispatch(fetchStates())
-  // }, [])
 
   return (
     <>
-      <h1>Hello States</h1>
+      <MapUSA/>
     </>
   )
 }
