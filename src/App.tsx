@@ -4,17 +4,15 @@ import { useAppDispatch, useAppSelector } from './store/store'
 import { fetchStates } from './store/slices/stateSlice'
 
 function App() {
-  const states = useAppSelector(s => s.states.state)
-  const dispatch = useAppDispatch()
-  useEffect(()=> {
-    dispatch(fetchStates())
-  }, [])
+  // const states = useAppSelector(s => s.states.state)
+  // const dispatch = useAppDispatch()
+  // useEffect(()=> {
+  //   dispatch(fetchStates())
+  // }, [])
 
   return (
     <>
       <h1>Hello States</h1>
-        {console.log(states)}
-      {states.map(s => <p>{JSON.stringify(s)}</p>)}
     </>
   )
 }
